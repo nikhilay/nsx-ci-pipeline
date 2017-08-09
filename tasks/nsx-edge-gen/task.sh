@@ -86,6 +86,7 @@ echo "$NSX_EDGE_GEN_NSX_MANAGER_TRANSPORT_ZONE"
 echo "$NSX_EDGE_GEN_NSX_MANAGER_TRANSPORT_ZONE_CLUSTERS"
 echo "$ESG_DEFAULT_UPLINK_IP_1 "
 
+./nsx-gen/bin/nsxgen \ -h
 
 ./nsx-gen/bin/nsxgen \
 -c $NSX_EDGE_GEN_NAME \
