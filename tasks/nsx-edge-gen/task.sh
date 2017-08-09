@@ -121,7 +121,7 @@ echo "$ARGS"
 -nsxmanager_en_dlr $NSX_EDGE_GEN_ENABLE_DLR \
 -nsxmanager_bosh_nsx_enabled $NSX_EDGE_GEN_BOSH_NSX_ENABLED \
 $ARGS \
-build
+list
 
 STATUS=$?
 popd  >/dev/null 2>&1
