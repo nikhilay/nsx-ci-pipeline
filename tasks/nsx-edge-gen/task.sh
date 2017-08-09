@@ -85,8 +85,9 @@ echo "$NSX_EDGE_GEN_NAME"
 echo "$NSX_EDGE_GEN_NSX_MANAGER_TRANSPORT_ZONE"
 echo "$NSX_EDGE_GEN_NSX_MANAGER_TRANSPORT_ZONE_CLUSTERS"
 echo "$ESG_DEFAULT_UPLINK_IP_1 "
-./nsx-gen/bin/nsxgen \
--c $NSX_EDGE_GEN_NAME \
+
+
+PARAMS = -c $NSX_EDGE_GEN_NAME \
 -esg_name_1 $NSX_EDGE_GEN_NAME \
 -esg_size_1 $ESG_SIZE  \
 -esg_ospf_password_1 $ESG_OSPF_PASSWORD_1  \
@@ -124,7 +125,8 @@ echo "$ESG_DEFAULT_UPLINK_IP_1 "
 -nsxmanager_bosh_nsx_enabled $NSX_EDGE_GEN_BOSH_NSX_ENABLED \
 $ARGS \
 build 
-
+echo "$PARAMS"
+./nsx-gen/bin/nsxgen \ $PARAMS
 STATUS=$?
 popd  >/dev/null 2>&1
 
