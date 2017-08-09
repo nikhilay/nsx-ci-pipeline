@@ -81,12 +81,7 @@ if [ "$ISOZONE_SWITCH_NAME_3" != "" ]; then
   fi
 fi
 
-echo "$NSX_EDGE_GEN_NAME"
-echo "$NSX_EDGE_GEN_NSX_MANAGER_TRANSPORT_ZONE"
-echo "$NSX_EDGE_GEN_NSX_MANAGER_TRANSPORT_ZONE_CLUSTERS"
-echo "$ESG_DEFAULT_UPLINK_IP_1 "
-
-./nsx-gen/bin/nsxgen \ -h
+echo "$ARGS"
 
 ./nsx-gen/bin/nsxgen \
 -c $NSX_EDGE_GEN_NAME \
@@ -119,7 +114,7 @@ echo "$ESG_DEFAULT_UPLINK_IP_1 "
 -nsxmanager_user $NSX_EDGE_GEN_NSX_MANAGER_ADMIN_USER   \
 -nsxmanager_pass $NSX_EDGE_GEN_NSX_MANAGER_ADMIN_PASSWD   \
 -nsxmanager_tz $NSX_EDGE_GEN_NSX_MANAGER_TRANSPORT_ZONE   \
--nsxmanager_tz_clusters $NSX_EDGE_GEN_NSX_MANAGER_TRANSPORT_ZONE_CLUSTERS \
+-nsxmanager_tz_clusters "$NSX_EDGE_GEN_NSX_MANAGER_TRANSPORT_ZONE_CLUSTERS" \
 -nsxmanager_dportgroup $NSX_EDGE_GEN_NSX_MANAGER_DISTRIBUTED_PORTGROUP \
 -nsxmanager_uplink_ip $ESG_DEFAULT_UPLINK_IP_1  \
 -nsxmanager_uplink_port $ESG_DEFAULT_UPLINK_PG_1 \
